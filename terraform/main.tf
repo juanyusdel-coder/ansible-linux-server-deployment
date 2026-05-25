@@ -23,7 +23,7 @@ resource "aws_instance" "linux_server" {
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
   # This runs automatically when the server starts
-  user_data = file("${path.module}/../scripts/setup.sh")
+  user_data = file("${path.module}/../terraform/scripts/setup.sh")
 
   tags = {
     Name = "AutoDeployed-Linux-Server"
